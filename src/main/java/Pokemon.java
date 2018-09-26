@@ -103,17 +103,46 @@ public class Pokemon {
         int totalDamage = damage1 + damage2 + damage3;
 
         System.out.println(this.name + " is attacking " + opponent.name);
+        try
+        {
+            Thread.sleep(1500);
+        }
+        catch (InterruptedException ex)
+        { }
         System.out.println(this.name + " rolls an attack bonus of " + attackBonus);
+        try
+        {
+            Thread.sleep(1500);
+        }
+        catch (InterruptedException ex)
+        { }
         System.out.println(opponent.name + " rolls a defense bonus of " + defenseBonus);
-
+        try
+        {
+            Thread.sleep(1500);
+        }
+        catch (InterruptedException ex)
+        { }
 
         /*
          * Did our attack hit?
          */
         if ((attackLevel + attackBonus) > (opponent.defenseLevel + defenseBonus)) {
             System.out.println("The attack hits dealing 3-D6 damage!");
+            try
+            {
+                Thread.sleep(1500);
+            }
+            catch (InterruptedException ex)
+            { }
             System.out.println("The rolls are " + damage1 + ", " + damage2 + ", " + "and "
                     + damage3 + " totaling: " + totalDamage + " damage!");
+            try
+            {
+                Thread.sleep(1500);
+            }
+            catch (InterruptedException ex)
+            { }
 
             /*
              * Does opponent have hit points left?
@@ -121,8 +150,20 @@ public class Pokemon {
             if ((opponent.hitPoints - totalDamage) > 0) {
                 System.out.println(opponent.name + " has "
                         + (opponent.hitPoints - totalDamage) + " hit points");
+                try
+                {
+                    Thread.sleep(1500);
+                }
+                catch (InterruptedException ex)
+                { }
             } else {
                 System.out.println(opponent.name + " has been defeated!");
+                try
+                {
+                    Thread.sleep(1500);
+                }
+                catch (InterruptedException ex)
+                { }
             }
             /*
              * Set the opponents hitPoints appropriately.
@@ -130,6 +171,12 @@ public class Pokemon {
             opponent.hitPoints = opponent.hitPoints - totalDamage;
         } else {
             System.out.println("The attack missed!");
+            try
+            {
+                Thread.sleep(1500);
+            }
+            catch (InterruptedException ex)
+            { }
         }
         System.out.println(" ");
         return (opponent.hitPoints < 1);
